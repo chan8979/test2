@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>슉슉이 Gender Reveal</title>
+<style>
+body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;overflow:hidden;font-family:-apple-system;background:#faf5ff}
+.wrap{width:100%;max-width:360px;text-align:center}
+h1{font-size:22px;margin:6px 0}
+.desc{font-size:13px;margin-bottom:8px}
+.stage{height:280px;display:flex;justify-content:center;align-items:center}
+.balloon{width:150px;height:190px;border-radius:50%;background:linear-gradient(#caa8ff,#7a4fd4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold}
+.baby{display:none;font-size:70px}
+.result{font-size:24px;font-weight:bold;margin-top:6px}
+button{margin-top:10px;padding:8px 14px;border:none;border-radius:20px;background:#6b4cc2;color:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>슉슉이 성별은? 🎈</h1>
+<div class="desc">풍선을 눌러보세요</div>
+
+<div class="stage">
+<div class="balloon" id="balloon">TOUCH</div>
+<div class="baby" id="baby">👧</div>
+</div>
+
+<div class="result" id="result"></div>
+<button onclick="location.reload()">다시</button>
+</div>
+
+<script>
+let c=0;
+document.getElementById("balloon").onclick=()=>{
+c++;
+if(c>=7){
+document.getElementById("balloon").style.display="none";
+document.getElementById("baby").style.display="block";
+document.getElementById("result").innerText="It's a Girl 💖";
+}
+}
+</script>
+</body>
+</html>
